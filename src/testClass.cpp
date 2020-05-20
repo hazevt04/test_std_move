@@ -79,6 +79,9 @@ testClass::testClass( testClass&& other ) noexcept {
    name = std::move(other.name);
    foo = other.foo;
    num_vals = other.num_vals;
+   // This is where move shines. 
+   // Since other won't need the array memory after this,
+   // just take it
    array = other.array;
 
    other.name = "";
@@ -102,6 +105,9 @@ testClass& testClass::operator=( testClass&& other ) noexcept {
       name = std::move(other.name);
       foo = other.foo;
       num_vals = other.num_vals;
+      // This is where move shines. 
+      // Since other won't need the array memory after this,
+      // just take it
       array = other.array;
       
       other.name = "";
