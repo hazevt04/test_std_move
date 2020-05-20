@@ -97,7 +97,7 @@ testClass::testClass( testClass&& other ) noexcept {
 testClass& testClass::operator=( testClass&& other ) noexcept {
    std::cout << "move assignment constructor: ";
    other.print( "other: " );
-   print();
+   print( "this: " );
 
    if ( this != &other ) {
       delete[] array;
